@@ -4,12 +4,12 @@ async function fetchPlanets() {
     try {
         const response = await fetch(API_URL);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error("Request failed: " + response.status);
         }
         const planets = await response.json();
         console.log(planets);
     } catch (error) {
-        console.error("Error fetching planets:", error);
+        console.error("Could not load planets:", error);
     }
 }
 

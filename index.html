@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Planets Explorer</title>
+        <title>Planets Explorer</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Planets Explorer</a>
+            <button id="theme-toggle" type="button">Dark Mode</button>
+        </header>
+        
+        <main>
+            <section class="search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search for a planet name...">
+                    <button type="submit">Search</button>
+                </form>
+                <p id="error-message" hidden>Planet not found.</p>
+            </section>
+            <section class="planet-card" id="planet-card"></section>
+
+            <section class="facts">
+                <h2>Planetary Facts at a Glance</h2>
+                <p>Data about the planets of our solar system(Planetary facts taken from NASA)</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Planet</th>
+                            <th>Name</th>
+                            <th>Mass (10^24 kg)</th>
+                            <th>Diameter (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="planet-table"></tbody>
+                </table>
+                        
+            </section>
+        </main>
+        <footer>
+            <div>
+                <h2>About</h2>
+                <p>Joy</p>
+            </div>
+            <div>
+                <p>@2026 Design by <a href="https://amakandukwu.com">Amaka N</a></p>
+                <p>Built by <a href="https://github.com/Joyojo181/Planets-Explorer">Planets-Explorer</a> All rights reserved.</p>
+                <p><a href="https://tsacademyonline.com/">TSAcademy</a></p>
+                
+
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

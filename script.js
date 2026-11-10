@@ -13,4 +13,4 @@ async function fetchPlanets() {
     }
 }
 
-getPlanets();
+fetchPlanets();

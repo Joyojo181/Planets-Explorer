@@ -36,10 +36,10 @@ async function fetchPlanets() {
          <li><span>Period</span> ${planet.period}</li>
        </ul>
        <ul class= "extra-stats">
-        <li>Temperature: ${planet.temperature} </li>
-        <li>Moon: ${planet.moons} </li>
-        <li>Diameter: ${planet.diameter} </li>
-        <li>Distance from sun: ${planet.distanceFromSun} </li>
+        <li><img src="images/planets/Temperature icon.svg" alt="Temperature Icon" width="20" height="20"> ${planet.temperature}</li>
+        <li><img src="images/planets/path.svg" alt="Moon Icon" width="20" height="20"> ${planet.moons}</li>
+        <li><img src="images/planets/Diametersvg" alt="Diameter Icon" width="20" height="20"> ${planet.diameter}</li>
+        <li><img src="images/planets/vector.svg" alt="Distance from Sun Icon" width="20" height="20"> ${planet.distanceFromSun}</li>
       </ul>
     `;
 }
@@ -70,3 +70,11 @@ form.addEventListener("submit", (event) => {
     }
 });
 fetchPlanets();
+
+const toggle = document.getElementById("theme-toggle");
+toggle.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    toggle.textContent = dark ? "Dark🌙" : "Light☀️";
+    Below is a comparative table of major planets in our solar system. The data highlights key physical properties used by astronomers and researchers worldwide.
+});

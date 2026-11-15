@@ -6,12 +6,12 @@
         <title>Planets Explorer</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
-            <a href="#" class="logo">Planets Explorer</a>
+            <a href="#" class="logo"><img src="images/logo.svg" alt="planet" width="121" height="52"></a>
             <button id="theme-toggle" type="button">Dark Mode</button>
         </header>
         
@@ -33,7 +33,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Planet</th>
+                            <th colspan="2" aria-label="planet group"></th>
                             <th>Name</th>
                             <th>Mass (10^24 kg)</th>
                             <th>Diameter (km)</th>

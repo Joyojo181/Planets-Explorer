@@ -153,7 +153,7 @@
     height: 20px;
     margin: 0 2px;
 }
-.facts h2{ color: var(--heading);}
+.facts h2{ color: var(--heading); font-family: "Inter", sans-serif;}
     table{
         width: 100%;
         border-collapse: collapse;
@@ -162,6 +162,15 @@
         gap: 50px;
         font-family: "Inter",sans-serif;
     }
+    .facts p{
+        font-family: "Inter",sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0;
+        color: #0f2a44;
+    }
+    [data-theme="dark"] .facts p {color:#90A4D4}
     th{background: #164baf; color: #fff; text-align: left; padding: 12px;}
     td{background: var(--table-row); color: #212121; padding: 10px 12px; font-weight: 500; font-family: "Inter", sans-serif;}
     th,td{
@@ -172,8 +181,12 @@
     }
     td.group{
         background: #d1e3ff;
-        color: #141d2f;
-        font-weight: 500;
+        color: #212121;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+        text-align: center;
         border: 2px solid #fff;
     }
     footer{

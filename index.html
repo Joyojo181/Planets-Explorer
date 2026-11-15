@@ -4,17 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Planets Explorer</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
-            <a href="#" class="logo">Planets Explorer</a>
+            <a href="#" class="logo"><img src="images/logo.svg" alt="planet" width="121" height="52"></a>
             <button id="theme-toggle" type="button">Dark Mode</button>
         </header>
         
         <main>
             <section class="search">
                 <form id="search-form">
+                    <img src="images/planets/Combined Shape.svg" alt="Search Icon" width="20" height="20">
                     <input type="text" id="search-input" placeholder="Search for a planet name...">
                     <button type="submit">Search</button>
                 </form>
@@ -24,11 +28,12 @@
 
             <section class="facts">
                 <h2>Planetary Facts at a Glance</h2>
+                <p>Below is a comparative table of major planets in our solar system. The data highlights key physical properties used by astronomers and researchers worldwide.</p>
                 <p>Data about the planets of our solar system(Planetary facts taken from NASA)</p>
                 <table>
                     <thead>
                         <tr>
-                            <th>Planet</th>
+                            <th colspan="2" aria-label="planet group"></th>
                             <th>Name</th>
                             <th>Mass (10^24 kg)</th>
                             <th>Diameter (km)</th>

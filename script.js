@@ -36,27 +36,64 @@ async function fetchPlanets() {
          <li><span>Period</span> ${planet.period}</li>
        </ul>
        <ul class= "extra-stats">
-        <li>Temperature: ${planet.temperature} </li>
-        <li>Moon: ${planet.moons} </li>
-        <li>Diameter: ${planet.diameter} </li>
-        <li>Distance from sun: ${planet.distanceFromSun} </li>
+        <li><img src="images/temperature.svg" alt="Temperature"> ${planet.temperature}</li>
+        <li><img src="images/moon.svg" alt="moon"> ${planet.moons}</li>
+        <li><img src="images/diameter.svg" alt="Diameter Icon"> ${planet.diameter}</li>
+        <li><img src="images/distance.svg" alt="Distance from Sun Icon"> ${planet.distanceFromSun}</li>
       </ul>
     `;
 }
 
 function showTable(list) {
-    tableBody.innerHTML = list
-     .map(
-        (p) => `
-        <tr>
-            <td>${p.type}</td>
-            <td>${p.name}</td>
-            <td>${p.mass}</td>
-            <td>${p.diameter}</td>
-        </tr>`
-     )
-     .join("");
-} 
+    const groups = [
+        { label: "Terrestrial Planets", type: "Terrestrial"},
+        {
+            label: "Jovian Planets",
+            sub: [
+                { label: "Gas Giants", type:"Gas Giant"},
+                { label: "Ice Giants", type:"Ice Giant"},
+            ],
+        },
+        { label:"Dwarf Planets", type:"Dwarf Planet"}
+    ];
+   const cells = (p) =>
+    `<td>${p.name}</td><td>${p.mass}</td><td>${p.diameter}</td>`;
+
+   let html = "";
+
+   groups.forEach((g) => {
+    if (g.sub) {
+        const total = g.sub.reduce(
+            (n, s) => n + list.filter((p) => p.type === s.type).length, 0
+        );
+        let first = true;
+        g.sub.forEach((s) => {
+            const items = list.filter((p) => p.type === s.type);
+            items.forEach((p, i) => {
+                html += "<tr>";
+                if (first) {
+                    html += `<td class="group" rowspan="${total}">${g.label}</td>`;
+                    first = false
+                }
+                if (i === 0) {
+                    html += `<td class="group" rowspan="${items.length}">${s.label}</td>`;
+                }
+                html += cells(p) + "</tr>";
+            });
+        });
+    }else{ 
+        const items = list.filter((p) => p.type === g.type);
+        items.forEach((p, i) => {
+            html += "<tr>";
+            if (i === 0) {
+                html += `<td class="group" rowspan="${items.length}" colspan="2">${g.label}</td>`;
+            }
+            html += cells(p) + "</tr>";
+        });
+    }
+});
+tableBody.innerHTML = html;
+}
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -70,3 +107,11 @@ form.addEventListener("submit", (event) => {
     }
 });
 fetchPlanets();
+
+const toggle = document.getElementById("theme-toggle");
+toggle.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    document.documentElement.dataset.theme = dark ? "light" : "dark";
+    toggle.textContent = dark ? "Dark🌙" : "Light☀️";
+
+});

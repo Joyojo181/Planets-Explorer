@@ -11,10 +11,17 @@ https://planets-explorer-six.vercel.app
 Joy built the whole project on her own: 
 
 - Set up the Github repo and the Git workflow with feature branches and pull requests
-- Loaded and display the planet data JavaScript (fetch)
+- Loaded and displayed the planet data with JavaScript (fetch)
 - Built the search bar, planet card and the grouped facts table
 - Added the light and dark mode toggle
 - Made the layout responsive for desktop, tablet and mobile
 - Deployed the site on vercel 
 
 Design by Amaka N ( Figma mockup provided by TS Academy)
+
+## How to Run Locally
+
+1. Clone the repo from https://github.com/Joyojo181/Planets-Explorer
+2. Open the Planets-Explorer folder in VS Code.
+3. Install the Live Server extension.
+4. Right-click index.html and choose Open with Live Server.

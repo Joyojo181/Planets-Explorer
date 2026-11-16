@@ -38,7 +38,7 @@ async function fetchPlanets() {
        <ul class= "extra-stats">
         <li><img src="images/temperature.svg" alt="Temperature"> ${planet.temperature}</li>
         <li><img src="images/moon.svg" alt="moon"> ${planet.moons}</li>
-        <li><img src="images/diameter.svg" alt="Diameter Icon"> ${planet.diameter}</li>
+        <li><img src="images/Diameter.svg" alt="Diameter Icon"> ${planet.diameter}</li>
         <li><img src="images/distance.svg" alt="Distance from Sun Icon"> ${planet.distanceFromSun}</li>
       </ul>
     `;
